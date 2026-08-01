@@ -1,0 +1,263 @@
+/* ===========================
+   LOGIN PAGE
+=========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f4c81, #2193b0, #6dd5ed);
+  padding: 40px 20px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+
+/* ===========================
+   LEFT SIDE
+=========================== */
+
+.login-left {
+  background: linear-gradient(rgba(0,51,102,.85),
+              rgba(0,51,102,.85)),
+              url("https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200")
+              center/cover;
+  color: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-left h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.login-left p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.login-left img {
+  width: 100%;
+  border-radius: 12px;
+  display: none;
+}
+
+/* ===========================
+   RIGHT SIDE
+=========================== */
+
+.login-right {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-right h2 {
+  text-align: center;
+  margin-bottom: 35px;
+  color: #003366;
+  font-size: 34px;
+}
+
+.login-right form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-right label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  margin-top: 15px;
+}
+
+.login-right input,
+.login-right select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  transition: .3s;
+}
+
+.login-right input:focus,
+.login-right select:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 8px rgba(0,102,204,.2);
+}
+
+/* ===========================
+   PASSWORD
+=========================== */
+
+.password-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.password-box input {
+  flex: 1;
+  border: none;
+  border-radius: 0;
+}
+
+.password-box input:focus {
+  box-shadow: none;
+}
+
+.show-btn {
+  background: #003366;
+  color: white;
+  border: none;
+  padding: 14px 18px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.show-btn:hover {
+  background: #0056b3;
+}
+
+/* ===========================
+   ERROR
+=========================== */
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* ===========================
+   LOGIN BUTTON
+=========================== */
+
+.login-btn {
+  margin-top: 30px;
+  padding: 15px;
+  background: #003366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.login-btn:hover {
+  background: #0055aa;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   LINKS
+=========================== */
+
+.login-links {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-links a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.login-links a:hover {
+  color: #ff9800;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 992px) {
+
+  .login-container {
+    grid-template-columns: 1fr;
+  }
+
+  .login-left {
+    display: none;
+  }
+
+  .login-right {
+    padding: 40px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .login-page {
+    padding: 20px;
+  }
+
+  .login-right {
+    padding: 30px 20px;
+  }
+
+  .login-right h2 {
+    font-size: 28px;
+  }
+
+  .login-links {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .login-container {
+    border-radius: 12px;
+  }
+
+  .login-right h2 {
+    font-size: 24px;
+  }
+
+  .login-right input,
+  .login-right select {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+    padding: 13px;
+  }
+
+}
