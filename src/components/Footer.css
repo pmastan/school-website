@@ -267,3 +267,36 @@
 
 
 }
+
+
+/* Quick Links */
+.footer-grid ul {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 10px 25px;
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0;
+}
+
+.footer-grid ul li {
+  margin: 0;
+}
+
+.footer-grid ul li a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.footer-grid ul li a:hover {
+  color: #f0c040;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 600px) {
+  .footer-grid ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 15px;
+  }
+}

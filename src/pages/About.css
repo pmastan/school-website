@@ -417,3 +417,56 @@ font-size:36px;
     box-sizing: border-box;
   }
 }
+
+
+/* About Page Background */
+.about-page {
+  background-image:
+    linear-gradient(
+      rgba(245, 248, 255, 0.88),
+      rgba(245, 248, 255, 0.88)
+    ),
+    url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=85");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* About Banner */
+.about-banner {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.65)
+    ),
+    url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=85");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+/* Keep text readable above the background */
+.about-section,
+.school-info-section,
+.vision-section,
+.why-section,
+.school-contact-section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile compatibility */
+@media (max-width: 768px) {
+  .about-page {
+    background-attachment: scroll;
+  }
+
+  .about-banner {
+    background-position: center;
+    background-attachment: scroll;
+  }
+}

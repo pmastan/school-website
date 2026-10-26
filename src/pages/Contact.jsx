@@ -135,7 +135,6 @@ const Contact = () => {
           </div>
 
           <a
-            href="https://www.justdial.com/Kurnool/Padma-Vidya-Vikas-UP-EM-School-Near-Govt-Hospital-Veldurthi/9999P8518-8518-250625155620-N9J7_BZDET"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-directory-link"
