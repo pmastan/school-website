@@ -214,3 +214,206 @@ font-size:36px;
 }
 
 }
+
+
+
+
+/* School information section */
+.school-info-section {
+  padding: 60px 20px;
+  background: #f7f9fc;
+}
+
+.school-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.school-info-card {
+  padding: 25px 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.school-info-card h3 {
+  margin-bottom: 12px;
+  color: #234a84;
+  font-size: 18px;
+}
+
+.school-info-card p {
+  margin: 0;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.school-info-card small {
+  display: block;
+  margin-top: 8px;
+  color: #666666;
+}
+
+/* School location link */
+.school-location-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 20px;
+  color: #ffffff;
+  background: #234a84;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.school-location-link:hover {
+  background: #17345f;
+}
+
+/* Contact section */
+.school-contact-section {
+  padding: 60px 20px;
+  background: #ffffff;
+}
+
+.school-contact-card {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.contact-item {
+  padding: 25px;
+  background: #f7f9fc;
+  border-left: 4px solid #234a84;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+
+.contact-item h3 {
+  margin: 0 0 12px;
+  color: #234a84;
+  font-size: 19px;
+}
+
+.contact-item p {
+  margin: 6px 0;
+  line-height: 1.7;
+  color: #444444;
+}
+
+.contact-item a {
+  color: #234a84;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+.school-rating span:first-child {
+  color: #f4b400;
+  letter-spacing: 2px;
+}
+
+.school-rating span:last-child {
+  color: #333333;
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+.contact-item small {
+  display: block;
+  margin-top: 8px;
+  color: #666666;
+  line-height: 1.5;
+}
+
+/* Contact action buttons */
+.school-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 13px 22px;
+  color: #ffffff;
+  background: #234a84;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.contact-button:hover {
+  background: #17345f;
+  transform: translateY(-2px);
+}
+
+.location-button {
+  background: #16834a;
+}
+
+.location-button:hover {
+  background: #106638;
+}
+
+.directory-button {
+  background: #e87524;
+}
+
+.directory-button:hover {
+  background: #c65c16;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .school-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .school-contact-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .school-info-section,
+  .school-contact-section {
+    padding: 40px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .school-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .school-info-card,
+  .contact-item {
+    padding: 20px 16px;
+  }
+
+  .school-contact-actions {
+    flex-direction: column;
+  }
+
+  .contact-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
