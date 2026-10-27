@@ -1,25 +1,52 @@
 
 import "./Principal.css";
+import image from "../assets/image.webp";
+import image1 from "../assets/image1.webp";
+import meo from "../assets/meo.webp";
+import meo1 from "../assets/meo1.webp";
+
+
 
 const schoolLeaders = [
   {
     id: "principal",
     role: "Principal's Message",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
-    name: "Dr. Rajesh Kumar",
-    designation: "Principal",
+    image: image,
+    name: "D. Badesaheb",
+    designation: "Founder & HM",
     message:
       "Welcome to our school. We believe every child has unique potential. Our mission is to nurture students through quality education, discipline, values, innovation and creativity. Together, we build future leaders.",
   },
   {
     id: "correspondent",
     role: "Correspondent's Message",
-    image: "https://randomuser.me/api/portraits/men/75.jpg",
-    name: "School Correspondent",
-    designation: "Correspondent",
+    image: image1,
+    name: "D. Asha",
+    designation: "School Correspondent",
     message:
       "At Padma Vidya Vikas School, we are committed to providing a supportive learning environment where every student can grow with confidence. We focus on academic excellence, good character, discipline and strong values to prepare children for a successful future.",
   },
+  
+{
+  id: "meo",
+  role: "MEO's Message",
+  image: meo,
+  name: "Indira mam",
+  designation: "Mandal Educational Officer (MEO)",
+  message:
+    "Education is the foundation of a strong and progressive society. We encourage every student to pursue academic excellence, develop discipline, build good character and uphold strong moral values. Let us work together to create a supportive learning environment that empowers students with knowledge, confidence and the skills needed for a bright future.",
+},
+
+{
+  id: "meo",
+  role: "MEO's Message",
+  image: meo1,
+  name: "Ramesh Sir",
+  designation: "Mandal Educational Officer (MEO)",
+  message:
+    "Education plays a vital role in shaping responsible citizens and building a brighter future. I appreciate the efforts of Padma Vidya Vikas School in providing quality education and encouraging students to achieve their full potential. I encourage teachers to inspire young minds through dedication and innovation, and students to develop discipline, confidence, moral values and a lifelong love of learning. Let us work together to ensure every child receives the opportunity to succeed.",
+},
+
 ];
 
 function Principal() {

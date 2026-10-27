@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import "./Navbar.css";
+import logo from "../assets/LOGO.webp";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,25 +24,35 @@ function Navbar() {
 
   return (
     <nav className="navbar">
+      {/* School Logo and Name */}
       <Link to="/" className="logo" onClick={closeMenu}>
-        <span className="logo-icon">🎓</span>
+        <img
+          src={logo}
+          alt="Padma Vidya Vikas School Logo"
+          className="school-logo"
+        />
+
         <span className="logo-text">
           Padma Vidya Vikas School
           <small>Veldurti</small>
         </span>
       </Link>
 
+      {/* Mobile Menu Button */}
       <button
         className="hamburger"
         type="button"
         onClick={() => setMenuOpen(!menuOpen)}
-        aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-label={
+          menuOpen ? "Close navigation menu" : "Open navigation menu"
+        }
         aria-expanded={menuOpen}
         aria-controls="primary-navigation"
       >
         {menuOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
 
+      {/* Navigation Links */}
       <ul
         id="primary-navigation"
         className={`nav-links ${menuOpen ? "active" : ""}`}
