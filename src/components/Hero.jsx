@@ -10,6 +10,8 @@ const slides = [
     title: "Welcome to Padma Vidya Vikas School",
     description:
       "Empowering students through quality education, innovation and excellence.",
+    imageAnimation: "right",
+    textAnimation: "bottom",
   },
   {
     image:
@@ -17,6 +19,8 @@ const slides = [
     title: "Learn Today, Lead Tomorrow",
     description:
       "Building knowledge, confidence and skills for a brighter future.",
+    imageAnimation: "left",
+    textAnimation: "top",
   },
   {
     image:
@@ -24,6 +28,8 @@ const slides = [
     title: "Inspiring Young Minds",
     description:
       "Encouraging curiosity, creativity and a lifelong love of learning.",
+    imageAnimation: "center",
+    textAnimation: "fade",
   },
   {
     image:
@@ -31,6 +37,8 @@ const slides = [
     title: "Growing Together, Achieving Together",
     description:
       "Developing teamwork, leadership and strong values in every student.",
+    imageAnimation: "bottom",
+    textAnimation: "right",
   },
   {
     image:
@@ -38,6 +46,8 @@ const slides = [
     title: "A Bright Future Starts Here",
     description:
       "Discover an environment where every student can learn and succeed.",
+    imageAnimation: "top",
+    textAnimation: "left",
   },
 ];
 
@@ -62,30 +72,40 @@ function Hero() {
     return () => clearInterval(interval);
   }, []);
 
+  const slide = slides[currentSlide];
+
   return (
-    <section
-      className="hero"
-      style={{
-        backgroundImage: `url("${slides[currentSlide].image}")`,
-      }}
-    >
-      <div className="overlay">
+    <section className="hero" aria-label="School highlights">
+      {/* Animated background image */}
+      <div
+        key={`image-${currentSlide}`}
+        className={`hero-image image-${slide.imageAnimation}`}
+        style={{ backgroundImage: `url("${slide.image}")` }}
+        aria-hidden="true"
+      />
+
+      {/* Dark overlay and slider content */}
+      <div className="hero-overlay">
         <button
           className="slider-arrow prev"
+          type="button"
           onClick={prevSlide}
           aria-label="Previous slide"
         >
           &#10094;
         </button>
 
-        <div className="hero-content" key={currentSlide}>
+        <div
+          key={`content-${currentSlide}`}
+          className={`hero-content text-${slide.textAnimation}`}
+        >
           <span className="hero-label">
             PADMA VIDYA VIKAS SCHOOL · VELDURTI
           </span>
 
-          <h1>{slides[currentSlide].title}</h1>
+          <h1>{slide.title}</h1>
 
-          <p>{slides[currentSlide].description}</p>
+          <p>{slide.description}</p>
 
           <div className="hero-buttons">
             <Link to="/admissions" className="hero-btn primary">
@@ -97,18 +117,17 @@ function Hero() {
             </Link>
           </div>
 
-          <div className="slider-dots">
-            {slides.map((slide, index) => (
+          <div className="slider-dots" aria-label="Choose a slide">
+            {slides.map((item, index) => (
               <button
-                key={index}
+                key={item.title}
+                type="button"
                 className={`slider-dot ${
                   currentSlide === index ? "active" : ""
                 }`}
                 onClick={() => setCurrentSlide(index)}
                 aria-label={`Go to slide ${index + 1}`}
-                aria-current={
-                  currentSlide === index ? "true" : undefined
-                }
+                aria-pressed={currentSlide === index}
               />
             ))}
           </div>
@@ -116,6 +135,7 @@ function Hero() {
 
         <button
           className="slider-arrow next"
+          type="button"
           onClick={nextSlide}
           aria-label="Next slide"
         >

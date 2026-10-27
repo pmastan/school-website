@@ -1,46 +1,381 @@
-.principal{
-padding:80px 8%;
-display:grid;
-grid-template-columns:300px 1fr;
-gap:60px;
-align-items:center;
+
+/* =================================
+   SCHOOL LEADERSHIP SECTION
+================================= */
+
+.school-leaders,
+.school-leaders * {
+  box-sizing: border-box;
 }
 
-.principal img{
-width:100%;
-border-radius:50%;
-border:8px solid #0077ff;
+.school-leaders {
+  width: 100%;
+  padding: 80px 5%;
+  overflow: hidden;
+  background: #f5f8fc;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.principal-content h2{
-font-size:40px;
-color:#003366;
-margin-bottom:20px;
+.leaders-heading {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 45px;
+  text-align: center;
 }
 
-.principal-content p{
-line-height:1.8;
-font-size:18px;
-color:#555;
-margin-bottom:20px;
+.leaders-subtitle {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #e58a00;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.5;
 }
 
-.principal-content h3{
-color:#0077ff;
-margin-bottom:5px;
+.leaders-heading h2 {
+  margin: 0 0 15px;
+  color: #173451;
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 800;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
-@media(max-width:768px){
-
-.principal{
-grid-template-columns:1fr;
-text-align:center;
+.leaders-heading > p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #5f6b7a;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
-.principal img{
-width:250px;
-margin:auto;
-display:block;
+/* =================================
+   LEADERS GRID
+================================= */
+
+.leaders-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 28px;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
 }
 
+/* =================================
+   LEADER CARD
+================================= */
+
+.principal {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid #e3eaf3;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgba(23, 52, 81, 0.07);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.principal:hover {
+  transform: translateY(-5px);
+  border-color: #d2dfef;
+  box-shadow: 0 15px 35px rgba(23, 52, 81, 0.12);
+}
+
+/* =================================
+   LEADER IMAGE
+================================= */
+
+.principal-img {
+  flex: 0 0 125px;
+  width: 125px;
+  height: 155px;
+  overflow: hidden;
+  border: 3px solid #edf2f8;
+  border-radius: 12px;
+  background: #e7eef7;
+}
+
+.principal-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* =================================
+   LEADER CONTENT
+================================= */
+
+.principal-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.leader-role {
+  display: inline-block;
+  margin: 0 0 15px;
+  color: #173451;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.leader-message {
+  margin: 0 0 22px;
+  color: #586575;
+  font-size: 14px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.leader-signature {
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.leader-signature h3 {
+  margin: 0 0 6px;
+  color: #173451;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.leader-signature span {
+  display: inline-block;
+  color: #e58a00;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* =================================
+   LAPTOPS AND SMALL DESKTOPS
+================================= */
+
+@media (max-width: 1100px) {
+  .school-leaders {
+    padding: 70px 4%;
+  }
+
+  .leaders-container {
+    gap: 22px;
+  }
+
+  .principal {
+    gap: 18px;
+    padding: 23px;
+  }
+
+  .principal-img {
+    flex-basis: 105px;
+    width: 105px;
+    height: 135px;
+  }
+
+  .leader-role {
+    font-size: 18px;
+  }
+
+  .leader-message {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
+/* =================================
+   TABLETS
+================================= */
+
+@media (max-width: 850px) {
+  .school-leaders {
+    padding: 60px 5%;
+  }
+
+  .leaders-container {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 680px;
+    gap: 24px;
+  }
+
+  .principal {
+    gap: 26px;
+    padding: 28px;
+  }
+
+  .principal-img {
+    flex-basis: 135px;
+    width: 135px;
+    height: 165px;
+  }
+
+  .leader-role {
+    font-size: 21px;
+  }
+
+  .leader-message {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .leader-signature h3 {
+    font-size: 18px;
+  }
+}
+
+/* =================================
+   MOBILE PHONES
+================================= */
+
+@media (max-width: 550px) {
+  .school-leaders {
+    padding: 48px 18px;
+  }
+
+  .leaders-heading {
+    margin-bottom: 30px;
+  }
+
+  .leaders-subtitle {
+    margin-bottom: 10px;
+    font-size: 11px;
+    letter-spacing: 1.7px;
+  }
+
+  .leaders-heading h2 {
+    margin-bottom: 12px;
+    font-size: clamp(25px, 7vw, 32px);
+    line-height: 1.3;
+  }
+
+  .leaders-heading > p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .leaders-container {
+    gap: 20px;
+  }
+
+  .principal {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 20px;
+    border-radius: 13px;
+  }
+
+  .principal-img {
+    flex: 0 0 auto;
+    width: 125px;
+    height: 145px;
+    border-radius: 12px;
+  }
+
+  .principal-content {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .leader-role {
+    margin-bottom: 12px;
+    font-size: 20px;
+  }
+
+  .leader-message {
+    width: 100%;
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.85;
+    text-align: left;
+  }
+
+  .leader-signature {
+    width: 100%;
+    margin-top: 0;
+    padding-top: 15px;
+    border-top: 1px solid #e8edf4;
+    text-align: center;
+  }
+
+  .leader-signature h3 {
+    font-size: 17px;
+  }
+
+  .leader-signature span {
+    font-size: 13px;
+  }
+}
+
+/* =================================
+   EXTRA SMALL PHONES
+================================= */
+
+@media (max-width: 360px) {
+  .school-leaders {
+    padding: 40px 12px;
+  }
+
+  .leaders-heading h2 {
+    font-size: 25px;
+  }
+
+  .principal {
+    padding: 21px 16px;
+  }
+
+  .principal-img {
+    width: 112px;
+    height: 132px;
+  }
+
+  .leader-role {
+    font-size: 18px;
+  }
+
+  .leader-message {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .leader-signature h3 {
+    font-size: 16px;
+  }
+}
+
+/* =================================
+   ACCESSIBILITY
+================================= */
+
+@media (hover: none) {
+  .principal:hover {
+    transform: none;
+    box-shadow: 0 8px 28px rgba(23, 52, 81, 0.07);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .principal {
+    transition: none;
+  }
+
+  .principal:hover {
+    transform: none;
+  }
 }
