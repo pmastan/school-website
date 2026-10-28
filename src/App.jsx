@@ -12,6 +12,8 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollTop from "./components/ScrollTop";
+
+import Career from "./pages/Career";
 function App() {
   return (
     <>
@@ -26,6 +28,8 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
+
+        <Route path="/career" element={<Career />} />
       </Routes>
 
       <Footer />

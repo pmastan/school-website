@@ -19,6 +19,8 @@ function Navbar() {
     { name: "Gallery", path: "/gallery" },
     { name: "Admissions", path: "/admissions" },
     { name: "Contact", path: "/contact" },
+    
+    { name: "Career", path: "/career" },
     { name: "Login", path: "/login" },
   ];
 
