@@ -20,7 +20,7 @@ function Navbar() {
     { name: "Admissions", path: "/admissions" },
     { name: "Contact", path: "/contact" },
     
-    { name: "Career", path: "/career" },
+    { name: "Careers", path: "/career" },
     { name: "Login", path: "/login" },
   ];
 
