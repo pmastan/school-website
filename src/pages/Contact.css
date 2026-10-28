@@ -537,3 +537,138 @@
     animation-duration: 0.01ms !important;
   }
 }
+
+/* Interactive Google Map Section */
+.contact-location {
+  width: min(1200px, 92%);
+  margin: 70px auto;
+  padding: 38px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f0f9ff, #ffffff);
+  border: 1px solid #dbeafe;
+  border-radius: 24px;
+  box-shadow: 0 15px 45px rgba(15, 55, 100, 0.09);
+  text-align: center;
+}
+
+.contact-location-heading {
+  max-width: 720px;
+  margin: 0 auto 28px;
+}
+
+.contact-location-heading h2 {
+  margin: 10px 0;
+  color: #12325b;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+}
+
+.contact-location-heading p {
+  color: #52647a;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.contact-map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  border-radius: 18px;
+  background: #e5e7eb;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+}
+
+.contact-map-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Directions Button */
+.contact-map-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+  padding: 14px 25px;
+  border-radius: 10px;
+  background: #1264c0;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(18, 100, 192, 0.22);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact-map-btn:hover {
+  transform: translateY(-3px);
+  background: #0b4385;
+  box-shadow: 0 10px 22px rgba(18, 100, 192, 0.3);
+}
+
+/* Map Section Entrance Animation */
+.contact-location {
+  animation: contactMapReveal 0.8s ease both;
+}
+
+@keyframes contactMapReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Map */
+@media (max-width: 768px) {
+  .contact-location {
+    width: 94%;
+    margin: 45px auto;
+    padding: 24px 16px;
+    border-radius: 18px;
+  }
+
+  .contact-map-wrapper {
+    height: 340px;
+    border-width: 3px;
+    border-radius: 14px;
+  }
+
+  .contact-location-heading p {
+    font-size: 14px;
+  }
+
+  .contact-map-btn {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-map-wrapper {
+    height: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-location {
+    animation: none;
+  }
+
+  .contact-map-btn {
+    transition: none;
+  }
+}

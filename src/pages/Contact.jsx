@@ -1,4 +1,3 @@
-
 import "./Contact.css";
 
 const Contact = () => {
@@ -18,18 +17,20 @@ const Contact = () => {
       return;
     }
 
-    const emailSubject = encodeURIComponent(
-      `School Enquiry: ${subject}`
-    );
-
+    const emailSubject = encodeURIComponent(`School Enquiry: ${subject}`);
     const emailBody = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     );
 
-    // Opens the visitor's default email application.
     window.location.href =
       `mailto:?subject=${emailSubject}&body=${emailBody}`;
   };
+
+  const mapUrl =
+    "https://maps.google.com/maps?q=Padma%20Vidya%20Vikas%20UP%20English%20Medium%20School%2C%20Veldurthi%2C%20Andhra%20Pradesh%20518216&t=&z=15&ie=UTF8&iwloc=&output=embed";
+
+  const directionsUrl =
+    "https://www.google.com/maps/search/?api=1&query=Padma+Vidya+Vikas+UP+English+Medium+School+Veldurthi+Andhra+Pradesh+518216";
 
   return (
     <section className="contact-page">
@@ -73,7 +74,7 @@ const Contact = () => {
               </p>
 
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Padma+Vidya+Vikas+UP+EM+School+Veldurthi+Andhra+Pradesh+518216"
+                href={directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-link"
@@ -113,7 +114,6 @@ const Contact = () => {
 
             <div>
               <h3>School Working Hours</h3>
-
               <p>Monday – Saturday</p>
               <p>8:45 AM – 5:00 PM</p>
               <p className="contact-muted">Sunday: Closed</p>
@@ -127,7 +127,6 @@ const Contact = () => {
 
             <div>
               <h3>School Details</h3>
-
               <p>Established: 2017</p>
               <p>Medium: English</p>
               <p>Classes: 1 to 7</p>
@@ -135,11 +134,12 @@ const Contact = () => {
           </div>
 
           <a
+            href={directionsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="contact-directory-link"
           >
-            View School Directory Listing ↗
+            View School on Google Maps ↗
           </a>
         </div>
 
@@ -215,23 +215,39 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* School Location */}
+      {/* Interactive Moving Map */}
       <div className="contact-location">
-        <h2>Visit Our School</h2>
+        <div className="contact-location-heading">
+          <span className="contact-subtitle">FIND US HERE</span>
 
-        <p>
-          Padma Vidya Vikas UP English Medium School,
-          Near Government Hospital, Veldurthi,
-          Andhra Pradesh – 518216.
-        </p>
+          <h2>Visit Our School</h2>
+
+          <p>
+            Padma Vidya Vikas UP English Medium School,
+            Near Government Hospital, Veldurthi,
+            Andhra Pradesh – 518216.
+          </p>
+        </div>
+
+        <div className="contact-map-wrapper">
+          <iframe
+            className="contact-map-frame"
+            src={mapUrl}
+            title="Interactive map showing Padma Vidya Vikas School in Veldurthi"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          ></iframe>
+        </div>
 
         <a
-          href="https://www.google.com/maps/search/?api=1&query=Padma+Vidya+Vikas+UP+EM+School+Veldurthi+Andhra+Pradesh+518216"
+          href={directionsUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="contact-map-btn"
         >
-          Open Location in Google Maps ↗
+          <span aria-hidden="true">📍</span>
+          Get Directions on Google Maps ↗
         </a>
       </div>
     </section>
