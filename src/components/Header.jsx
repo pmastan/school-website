@@ -6,7 +6,7 @@ function Header() {
       <div className="header-container">
         <div className="left">
           📞 +91 9876543210 &nbsp; | &nbsp;
-          ✉️ info@abcschool.com
+          ✉️ info.pvvs@gmail.com
         </div>
 
         <div className="right">

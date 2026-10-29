@@ -1,0 +1,135 @@
+
+/* =====================================
+   RESPONSIVE SCROLL-TO-TOP BUTTON
+===================================== */
+
+.scroll-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 30px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+  padding: 0;
+
+  color: #ffffff;
+  background: linear-gradient(145deg, #174a87, #0b2d56);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Arrow */
+
+.scroll-to-top-icon {
+  display: block;
+  width: 21px;
+  height: 21px;
+  flex-shrink: 0;
+}
+
+/* Desktop hover */
+
+@media (hover: hover) and (pointer: fine) {
+  .scroll-to-top:hover {
+    color: #ffffff;
+    background: linear-gradient(145deg, #f7b733, #ed9414);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+  }
+
+  .scroll-to-top:hover .scroll-to-top-icon {
+    transform: translateY(-1px);
+  }
+}
+
+/* Keyboard accessibility */
+
+.scroll-to-top:focus-visible {
+  outline: 3px solid #f4a62a;
+  outline-offset: 3px;
+}
+
+/* Tablets */
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    right: 18px;
+    bottom: 28px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .scroll-to-top-icon {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+/* Mobile phones */
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    right: 14px;
+    bottom: calc(30px + env(safe-area-inset-bottom));
+    width: 38px;
+    height: 38px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  }
+
+  .scroll-to-top-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .scroll-to-top:active {
+    background: #ed9414;
+    transform: scale(0.94);
+  }
+}
+
+/* Extra-small phones */
+
+@media (max-width: 360px) {
+  .scroll-to-top {
+    right: 10px;
+    bottom: calc(26px + env(safe-area-inset-bottom));
+    width: 35px;
+    height: 35px;
+  }
+
+  .scroll-to-top-icon {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-to-top,
+  .scroll-to-top-icon {
+    transition: none;
+  }
+
+  .scroll-to-top:hover,
+  .scroll-to-top:active,
+  .scroll-to-top:hover .scroll-to-top-icon {
+    transform: none;
+  }
+}

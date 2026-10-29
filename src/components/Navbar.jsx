@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, UserRound } from "lucide-react";
 import "./Navbar.css";
 import logo from "../assets/LOGO.webp";
 
@@ -19,9 +19,8 @@ function Navbar() {
     { name: "Gallery", path: "/gallery" },
     { name: "Admissions", path: "/admissions" },
     { name: "Contact", path: "/contact" },
-    
     { name: "Careers", path: "/career" },
-    { name: "Login", path: "/login" },
+    { name: "Login", path: "/login", icon: true },
   ];
 
   return (
@@ -44,9 +43,11 @@ function Navbar() {
       <button
         className="hamburger"
         type="button"
-        onClick={() => setMenuOpen(!menuOpen)}
+        onClick={() => setMenuOpen((prev) => !prev)}
         aria-label={
-          menuOpen ? "Close navigation menu" : "Open navigation menu"
+          menuOpen
+            ? "Close navigation menu"
+            : "Open navigation menu"
         }
         aria-expanded={menuOpen}
         aria-controls="primary-navigation"
@@ -66,10 +67,20 @@ function Navbar() {
               end={item.path === "/"}
               onClick={closeMenu}
               className={({ isActive }) =>
-                isActive ? "nav-link active-link" : "nav-link"
+                `nav-link ${isActive ? "active-link" : ""} ${
+                  item.icon ? "login-link" : ""
+                }`
               }
             >
-              {item.name}
+              {item.icon && (
+                <UserRound
+                  size={18}
+                  strokeWidth={2}
+                  aria-hidden="true"
+                />
+              )}
+
+              <span>{item.name}</span>
             </NavLink>
           </li>
         ))}

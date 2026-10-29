@@ -31,11 +31,13 @@ const Footer = () => {
               <li><Link to="/about">About</Link></li>
               <li><Link to="/admissions">Admissions</Link></li>
               <li><Link to="/academics">Academics</Link></li>
-              <li><Link to="/facilities">Facilities</Link></li>
+              {/* <li><Link to="/facilities">Facilities</Link></li> */}
               <li><Link to="/gallery">Gallery</Link></li>
-              <li><Link to="/events">Events</Link></li>
-              <li><Link to="/teachers">Teachers</Link></li>
+              {/* <li><Link to="/events">Events</Link></li> */}
+              {/* <li><Link to="/teachers">Teachers</Link></li> */}
               <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/careers">Careers</Link></li> 
+              <li><Link to="/login">Login</Link></li>
             </ul>
           </div>
 
@@ -44,8 +46,8 @@ const Footer = () => {
             <h3>Contact Us</h3>
 
             <p>📍 Veldurti, Andhra Pradesh, India</p>
-            <p>📞 Add your school's phone number</p>
-            <p>✉️ Add your school's email address</p>
+            <p>📞 9876543210</p>
+            <p>✉️  info.pvvs@gmail.com</p>
 
             <p className="footer-message">
               We welcome students and parents to our school community.

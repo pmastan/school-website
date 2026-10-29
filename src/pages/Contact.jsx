@@ -85,27 +85,42 @@ const Contact = () => {
           </div>
 
           <div className="contact-detail">
-            <div className="contact-icon" aria-hidden="true">
-              📞
-            </div>
+  <div className="contact-icon" aria-hidden="true">
+    📞
+  </div>
 
-            <div>
-              <h3>Phone Number</h3>
+  <div>
+    <h3>Phone Number</h3>
 
-              <p>
-                <a href="tel:+919440851987">
-                  +91 94408 51987
-                </a>
-              </p>
+    <p>
+      <a href="tel:+919440851987">
+        +91 94408 51987
+      </a>
+    </p>
 
-              <a
-                href="tel:+919440851987"
-                className="contact-link"
-              >
-                Call Our School
-              </a>
-            </div>
-          </div>
+    <a
+      href="tel:+919440851987"
+      className="contact-link"
+    >
+      Call Our School
+    </a>
+
+    <h3>Gmail</h3>
+
+    <p>
+      <a href="mailto:info.pvvs@gmail.com">
+        info.pvvs@gmail.com
+      </a>
+    </p>
+
+    <a
+      href="mailto:info.pvvs@gmail.com"
+      className="contact-link"
+    >
+      Email Our School
+    </a>
+  </div>
+</div>
 
           <div className="contact-detail">
             <div className="contact-icon" aria-hidden="true">

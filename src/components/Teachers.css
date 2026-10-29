@@ -1,47 +1,298 @@
-.teachers{
-padding:80px 8%;
+
+
+.teachers {
+  width: 100%;
+  padding: clamp(20px, 4vw, 50px) clamp(12px, 3vw, 24px);
+  background: #f4f7fc;
+  box-sizing: border-box;
 }
 
-.teachers h2{
-text-align:center;
-font-size:40px;
-margin-bottom:40px;
-color:#003366;
+.teachers *,
+.teachers *::before,
+.teachers *::after {
+  box-sizing: border-box;
 }
 
-.teacher-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+/* =====================================
+   BANNER CONTAINER
+===================================== */
+
+.teachers-banner {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 1200px;
+  height: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #123b70;
+  box-shadow: 0 12px 35px rgba(18, 59, 112, 0.15);
 }
 
-.teacher-card{
-background:#fff;
-text-align:center;
-padding:25px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-transition:.3s;
+/* =====================================
+   GROUP PHOTO - DESKTOP
+===================================== */
+
+.teachers-banner-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
 
-.teacher-card:hover{
-transform:translateY(-8px);
+/* =====================================
+   DARK GRADIENT OVERLAY
+===================================== */
+
+.teachers-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 28, 55, 0.02) 0%,
+    rgba(8, 28, 55, 0.10) 40%,
+    rgba(8, 28, 55, 0.85) 100%
+  );
 }
 
-.teacher-card img{
-width:150px;
-height:150px;
-border-radius:50%;
-object-fit:cover;
-margin-bottom:20px;
-border:5px solid #0077ff;
+/* =====================================
+   TEXT CONTENT
+===================================== */
+
+.teachers-banner-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 45px 24px;
+  text-align: center;
+  color: #ffffff;
 }
 
-.teacher-card h3{
-color:#003366;
-margin-bottom:10px;
+.teachers-subtitle {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 1.5;
+  text-transform: uppercase;
 }
 
-.teacher-card p{
-color:#666;
+.teachers-banner-overlay h2 {
+  max-width: 100%;
+  margin: 0 0 15px;
+  color: #ffffff;
+  font-size: clamp(30px, 4.5vw, 48px);
+  font-weight: 800;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.teachers-banner-overlay p {
+  width: 100%;
+  max-width: 650px;
+  margin: 0;
+  color: #f3f6fb;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+/* =====================================
+   LAPTOPS
+===================================== */
+
+@media (max-width: 1024px) {
+  .teachers-banner {
+    height: 520px;
+  }
+
+  .teachers-banner-overlay {
+    padding: 35px 24px;
+  }
+
+  .teachers-banner-overlay h2 {
+    font-size: 40px;
+  }
+}
+
+/* =====================================
+   TABLETS
+===================================== */
+
+@media (max-width: 768px) {
+  .teachers {
+    padding: 25px 16px;
+  }
+
+  .teachers-banner {
+    height: auto;
+    min-height: 0;
+    border-radius: 14px;
+    background: #123b70;
+  }
+
+  /* Keep the complete group photo visible */
+  .teachers-banner-image {
+    position: relative;
+    inset: auto;
+    z-index: 0;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  /* Put a subtle gradient over the lower part of the image */
+  .teachers-banner::after {
+    z-index: 1;
+    background: linear-gradient(
+      to bottom,
+      rgba(8, 28, 55, 0) 35%,
+      rgba(8, 28, 55, 0.25) 55%,
+      rgba(8, 28, 55, 0.95) 100%
+    );
+  }
+
+  .teachers-banner-overlay {
+    position: absolute;
+    inset: auto 0 0;
+    z-index: 2;
+    width: 100%;
+    padding: 55px 20px 28px;
+  }
+
+  .teachers-subtitle {
+    margin-bottom: 8px;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .teachers-banner-overlay h2 {
+    margin-bottom: 10px;
+    font-size: clamp(26px, 4.5vw, 36px);
+  }
+
+  .teachers-banner-overlay p {
+    max-width: 500px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* =====================================
+   MOBILE PHONES
+   Show the full image without side cropping
+===================================== */
+
+@media (max-width: 480px) {
+  .teachers {
+    padding: 20px 12px;
+  }
+
+  .teachers-banner {
+    height: auto;
+    min-height: 0;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(18, 59, 112, 0.12);
+  }
+
+  /* Important: display the whole photo */
+  .teachers-banner-image {
+    position: relative;
+    inset: auto;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  /* Keep the photo clear and text readable */
+  .teachers-banner::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(8, 28, 55, 0) 35%,
+      rgba(8, 28, 55, 0.15) 50%,
+      rgba(8, 28, 55, 0.92) 100%
+    );
+  }
+
+  .teachers-banner-overlay {
+    position: absolute;
+    inset: auto 0 0;
+    width: 100%;
+    padding: 45px 14px 18px;
+    justify-content: flex-end;
+  }
+
+  .teachers-subtitle {
+    margin-bottom: 7px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+  }
+
+  .teachers-banner-overlay h2 {
+    margin: 0 0 8px;
+    font-size: clamp(22px, 6vw, 28px);
+    line-height: 1.2;
+  }
+
+  .teachers-banner-overlay p {
+    max-width: 340px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+
+/* =====================================
+   SMALL MOBILE PHONES
+===================================== */
+
+@media (max-width: 360px) {
+  .teachers {
+    padding: 16px 8px;
+  }
+
+  .teachers-banner {
+    border-radius: 8px;
+  }
+
+  .teachers-banner-overlay {
+    padding: 35px 10px 14px;
+  }
+
+  .teachers-subtitle {
+    margin-bottom: 5px;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .teachers-banner-overlay h2 {
+    margin-bottom: 6px;
+    font-size: 21px;
+  }
+
+  .teachers-banner-overlay p {
+    font-size: 11px;
+    line-height: 1.4;
+  }
 }

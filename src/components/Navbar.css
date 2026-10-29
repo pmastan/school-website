@@ -267,3 +267,47 @@
     font-size: 12px;
   }
 }
+
+/* Professional Login Link */
+.nav-link.login-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 8px;
+  background: #123b70;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.nav-link.login-link:hover {
+  background: #0b2850;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(18, 59, 112, 0.2);
+}
+
+.nav-link.login-link.active-link {
+  background: #0b2850;
+  color: #ffffff;
+}
+
+.nav-link.login-link svg {
+  flex-shrink: 0;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .nav-link.login-link {
+    display: flex;
+    width: fit-content;
+    margin: 8px 0;
+    padding: 10px 18px;
+  }
+}

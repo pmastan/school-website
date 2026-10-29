@@ -398,15 +398,27 @@ function Career() {
               </div>
             </div>
 
-            <div className="career-contact-box">
-              <span className="career-contact-icon">📞</span>
-              <div>
-                <strong>Contact the School</strong>
-                <a href="tel:+919440851987">
-                  +91 94408 51987
-                </a>
-              </div>
-            </div>
+           <div className="career-contact-box">
+  <span className="career-contact-icon" aria-hidden="true">
+    📞
+  </span>
+
+  <div>
+    <strong>Contact the School</strong>
+
+    <p>
+      <a href="tel:+919440851987">
+        +91 94408 51987
+      </a>
+    </p>
+
+    <p>
+      <a href="mailto:info.pvvs@gmail.com">
+        info.pvvs@gmail.com
+      </a>
+    </p>
+  </div>
+</div>
 
             <a
               className="career-directions-link"

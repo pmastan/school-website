@@ -437,7 +437,7 @@ function Admissions() {
 
                   <span>
                     <small>EMAIL US</small>
-                    <strong>admissions@abcschool.com</strong>
+                    <strong>info.pvvs@gmail.com</strong>
                   </span>
                 </a>
               </div>

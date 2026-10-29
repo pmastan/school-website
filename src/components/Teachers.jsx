@@ -1,41 +1,37 @@
-import "./Teachers.css";
 
-const teachers = [
-  {
-    name: "Dr. Rajesh Kumar",
-    subject: "Principal",
-    image: "https://randomuser.me/api/portraits/men/32.jpg"
-  },
-  {
-    name: "Mrs. Priya Sharma",
-    subject: "Mathematics",
-    image: "https://randomuser.me/api/portraits/women/44.jpg"
-  },
-  {
-    name: "Mr. Arjun Reddy",
-    subject: "Science",
-    image: "https://randomuser.me/api/portraits/men/50.jpg"
-  },
-  {
-    name: "Mrs. Sneha Rao",
-    subject: "English",
-    image: "https://randomuser.me/api/portraits/women/65.jpg"
-  }
-];
+import "./Teachers.css";
+import staffGroup from "../assets/staff.webp";
 
 function Teachers() {
   return (
-    <section className="teachers">
-      <h2>Meet Our Teachers</h2>
+    <section
+      className="teachers"
+      aria-labelledby="teachers-heading"
+    >
+      <div className="teachers-banner">
+        <img
+          src={staffGroup}
+          alt="Teaching staff of Padma Vidya Vikas School, Veldurti"
+          className="teachers-banner-image"
+          loading="lazy"
+          decoding="async"
+        />
 
-      <div className="teacher-grid">
-        {teachers.map((teacher, index) => (
-          <div className="teacher-card" key={index}>
-            <img src={teacher.image} alt={teacher.name} />
-            <h3>{teacher.name}</h3>
-            <p>{teacher.subject}</p>
-          </div>
-        ))}
+        <div className="teachers-banner-overlay">
+          <span className="teachers-subtitle">
+            OUR DEDICATED TEAM
+          </span>
+
+          <h2 id="teachers-heading">
+            Meet Our Teachers
+          </h2>
+
+          <p>
+            Dedicated educators inspiring young minds,
+            nurturing talent, and shaping a brighter future
+            for every student.
+          </p>
+        </div>
       </div>
     </section>
   );
